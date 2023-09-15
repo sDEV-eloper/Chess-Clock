@@ -9,6 +9,7 @@ const Header = () => {
 
   const start = () => {
     audio.currentTime=0;
+    audio.load(); 
     audio.play()
   }
   const toggleHandler=()=>{
@@ -18,13 +19,13 @@ setToggle(!toggle)
   return (
 <div className='flex justify-center p-8 bg-gray-200'>
 <div className='flex justify-evenly w-full'>
-<button onClick={()=>start()} className='text-white bg-blue-600 px-12 py-5 hover:bg-[#8510fb] rounded-lg active:scale-95 shadow-md shadow-black transition duration-150'>Reset</button>
-<button onClick={()=>toggleHandler()} className='text-white   bg-blue-600 px-6  hover:bg-[#8510fb] rounded-lg active:scale-95 shadow-md shadow-black transition duration-150'>
+<button onClick={()=>start()} className='text-white bg-gray-700 px-12 py-5 hover:bg-[#8510fb] rounded-lg active:scale-95 shadow-md shadow-black transition duration-150'>Reset</button>
+<button onClick={()=>toggleHandler()}  className='text-white   bg-gray-700 px-6  hover:bg-[#8510fb] rounded-lg active:scale-95 shadow-md shadow-black transition duration-150'>
   {toggle?
     <BsFillPlayFill size={60}/>:
     <BsFillPauseFill size={60}/>}
     </button>
-<button onClick={()=>start()} className='text-white bg-blue-600 px-12 py-5 hover:bg-[#8510fb] rounded-lg active:scale-95 shadow-md shadow-black transition duration-150'>Set Time</button>
+<button onClick={()=>start()} className='text-white bg-gray-700 px-12 py-5 hover:bg-[#8510fb] rounded-lg active:scale-95 shadow-md shadow-black transition duration-150'>Set Time</button>
 </div>
 </div>
   )
